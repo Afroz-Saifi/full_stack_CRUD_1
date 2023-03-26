@@ -4,9 +4,11 @@ const { connectDb } = require("./db/db");
 const { userRouter } = require("./routes/user.route");
 const { jwtAuth } = require("./middleware/jwt.middleware");
 const { storyRouter } = require("./routes/story.route");
+const cors = require('cors')
 
 const app = express();
 
+app.use(cors())
 app.use(express.json());
 
 app.use("/user", userRouter);
